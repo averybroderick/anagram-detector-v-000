@@ -1,4 +1,5 @@
 # Your code goes here!
+require 'pry'
 class Anagram
   attr_accessor :word_to_match
 
@@ -11,7 +12,7 @@ class Anagram
     arr_of_words.collect do |word|
       word.split("").sort.detect do |split_sorted_word|
         if @word_to_match.split("").sort == split_sorted_word
-          puts word
+          binding.pry
           result << word
         else
           nil

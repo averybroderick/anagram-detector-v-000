@@ -11,6 +11,7 @@ class Anagram
     arr_of_words.collect do |word|
       word.split("").sort.detect do |split_sorted_word|
         if @word_to_match.split("").sort == split_sorted_word
+          puts word
           result << word
         else
           nil

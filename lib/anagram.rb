@@ -6,18 +6,10 @@ class Anagram
     @word_to_match = word
   end
 
-  def match(arr_of_words)
-    result = []
-    arr_of_words.collect do |word|
-      word.split("").sort.detect do |split_sorted_word|
-        if @word_to_match.split("").sort == split_sorted_word
-          result << word
-        else
-          nil
-        end
-      end
+  def match(arr_of_words, word_to_match)
+    arr_of_words.find_all do |word|
+      word.split("").sort == word_to_match.split("").sort
     end
-  result
   end
 
 end
